@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
+import {UpDownServiceService} from './services/up-down-service.service';
+
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { AuthGuard } from './shared';
         AppRoutingModule
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard],
+    providers: [AuthGuard, UpDownServiceService],
+
     bootstrap: [AppComponent]
 })
 export class AppModule {}
