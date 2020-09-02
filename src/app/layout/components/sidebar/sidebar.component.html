@@ -10,21 +10,30 @@
 <!--            <span>{{ 'Charts'  }}</span>-->
 <!--        </a>-->
 
-        <a [routerLinkActive]="['router-link-active']" class="list-group-item" href="http://localhost:8761/">
-            <i class="fa fa-server"> </i>&nbsp;
-            <span>{{ 'Eureka Server'  }}</span>
-        </a>
+<!--        <a [routerLinkActive]="['router-link-active']" class="list-group-item" href="http://localhost:8761/">-->
+<!--            <i class="fa fa-server"> </i>&nbsp;-->
+<!--            <span>{{ 'Eureka Server'  }}</span>-->
+<!--        </a>-->
 
         <a [routerLink]="['/all-services']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-cogs"></i>&nbsp;
             <span>{{ 'All-Services'  }}</span>
         </a>
 
-        <a  [routerLinkActive]="['router-link-active']" class="list-group-item" href="http://localhost:8762/service2/actuator/health">
-            <i class="fa fa-info-circle"></i>&nbsp;
-            <span>{{ ' Actuator' }}</span>
+<!--        <a  [routerLinkActive]="['router-link-active']" class="list-group-item" href="http://localhost:8762/service2/actuator/health">-->
+<!--            <i class="fa fa-info-circle"></i>&nbsp;-->
+<!--            <span>{{ ' Actuator' }}</span>-->
+<!--        </a>-->
+        <a  [routerLinkActive]="['router-link-active']" class="list-group-item" href="wwww.google.fr">
+            <i class="fa fa-database"></i>&nbsp;
+            <span>{{ ' ***********' }}</span>
         </a>
-        <a  [routerLinkActive]="['router-link-active']" class="list-group-item" href="http://127.0.0.1:3030/kafka-topics-ui/#/">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-server"> </i>&nbsp;
+            <span>{{ 'Eureka Server'}}</span>
+        </a>
+
+        <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-database"></i>&nbsp;
             <span>{{ ' Kafka Environment' }}</span>
         </a>

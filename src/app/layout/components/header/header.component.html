@@ -20,8 +20,12 @@
                 </a>
                 <div class="dropdown-menu-right" ngbDropdownMenu>
 
-                    <a class="dropdown-item" href="http://localhost:8761/" >
+                    <a class="dropdown-item" [routerLink]="['/dashboard']" >
                         <i class="fa fa-server"> </i> {{ 'Eureka'}}
+                    </a>
+
+                    <a class="dropdown-item" [routerLink]="['/all-services']" >
+                        <i class="fa fa-cogs"></i>&nbsp; {{ 'all-Services'}}
                     </a>
                     <a class="dropdown-item" href="http://localhost:8762/service2/actuator/health"  >
                         <i class="fa fa-info-circle"></i> {{ 'Actuator'}}
