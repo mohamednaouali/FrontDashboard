@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {routerTransition} from '../router.animations';
 import { UpDownServiceService } from '../services/up-down-service.service';
-import {StatusResp} from '../models/status-resp';
-import {HttpClient} from '@angular/common/http';
+import { DataFetchService } from '../services/data-fetch.service';
+import {Service1} from '../Class/service1';
+
 
 
 @Component({
@@ -12,23 +13,47 @@ import {HttpClient} from '@angular/common/http';
     animations: [routerTransition()]
 })
 export class AllServicesComponent implements OnInit {
+    Service1 : any = [];
+    Service2 : any = [];
 
-     StatusResps : StatusResp[] = [];
-
-    constructor(private upDownServiceService :UpDownServiceService ) { }
-
+    constructor(private upDownServiceService :UpDownServiceService ,private dataFetchService  :DataFetchService) { }
+d
     ngOnInit() {
-    this.StatusResps;
-
+         this. loadService1();
+         this.loadService2()
     }
+
     UpStatus(){
         this.upDownServiceService.UpService()
-            .subscribe(StatusResps => this.StatusResps =StatusResps)
+            .subscribe()
     }
     DownStatus(){
         this.upDownServiceService.DownService()
-            .subscribe(StatusResps => this.StatusResps =StatusResps)
+            .subscribe()
     }
 
+    UpStatus2(){
+        this.upDownServiceService.UpService2()
+            .subscribe()
+    }
+    DownStatus2(){
+        this.upDownServiceService.DownService2()
+            .subscribe()
+    }
+
+    loadService1(){
+
+        return this.dataFetchService.getService1().subscribe((data: {}) => {
+            this.Service1 =data ;
+            console.log(data)
+        })
+    }
+    loadService2(){
+
+        return this.dataFetchService.getService2().subscribe((data: {}) => {
+            this.Service2 =data ;
+            console.log(data)
+        })
+    }
 
 }

@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 import {UpDownServiceService} from './services/up-down-service.service';
-
+import {DataFetchService} from './services/data-fetch.service';
 
 
 @NgModule({
@@ -19,7 +19,7 @@ import {UpDownServiceService} from './services/up-down-service.service';
         AppRoutingModule
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard, UpDownServiceService],
+    providers: [AuthGuard, UpDownServiceService,DataFetchService],
 
     bootstrap: [AppComponent]
 })

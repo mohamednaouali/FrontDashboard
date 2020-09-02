@@ -19,18 +19,20 @@
                     <i class="fa fa-user"></i> Administrator <b class="caret"></b>
                 </a>
                 <div class="dropdown-menu-right" ngbDropdownMenu>
-                    <a class="dropdown-item" >
-                        <i class="fa fa-fw fa-gear"></i> {{ 'Actuator'  }}
+
+                    <a class="dropdown-item" href="http://localhost:8761/" >
+                        <i class="fa fa-server"> </i> {{ 'Eureka'}}
                     </a>
-                    <a class="dropdown-item" >
-                        <i class="fa fa-fw fa-gear"> </i> {{ 'Eureka Server'  }}
+                    <a class="dropdown-item" href="http://localhost:8762/service2/actuator/health"  >
+                        <i class="fa fa-info-circle"></i> {{ 'Actuator'}}
                     </a>
-                    <a class="dropdown-item" >
-                        <i class="fa fa-fw fa-gear"> </i> {{ 'Zuul Server'  }}
+                    <a class="dropdown-item" href="http://127.0.0.1:3030/">
+                        <i class="fa fa-database"></i>&nbsp;{{ 'Kafka '}}
                     </a>
                     <a class="dropdown-item" [routerLink]="['/login']" (click)="onLoggedout()">
                         <i class="fa fa-fw fa-power-off"></i> {{ 'Log Out'  }}
                     </a>
+
                 </div>
             </li>
         </ul>

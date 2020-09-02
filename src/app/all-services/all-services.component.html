@@ -6,31 +6,32 @@
     <div class="row">
         <div class="container">
             <div class="card mb-3">
-                <div class="card-header " >
-                    Services
+                <div class="card-header "  >
+                    Service Details
                 </div>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
                         <tr>
                             <th>name</th>
-                            <th>Status</th>
                             <th>Port</th>
                             <th>IpAddr</th>
+                            <th>Status</th>
+                            <th>hostName</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>SERVICE1 </td>
-                            <td>UP</td>
-                            <td>8765</td>
-                            <td>192.168.30.137</td>
+                        <tr *ngFor="let service of Service1">
+                            <td>{{service.name}}</td>
+                            <td>{{service.port}}</td>
+                            <td>{{service.ipAddr}}</td>
+                            <td>{{service.status}}</td>
+                            <td>{{service.hostName}}</td>
                             <td>
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-primary" (click)="UpStatus()" >Up</button>
                                     <button type="button" class="btn btn-danger" (click)="DownStatus()">Down</button>
-<!--                                    <button type="button" class="btn btn-primary">Details </button>-->
                             </div>
                             </td>
                         </tr>
@@ -43,30 +44,30 @@
         <div class="container">
             <div class="card mb-3">
                 <div class="card-header " >
-                    Services
+                    Service Details
                 </div>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
                         <tr>
                             <th>name</th>
-                            <th>Status</th>
                             <th>Port</th>
                             <th>IpAddr</th>
+                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>SERVICE2</td>
-                            <td>UP</td>
-                            <td>8764</td>
-                            <td>192.168.30.137</td>
+                        <tr *ngFor="let service of Service2">
+                            <td>{{service.name}}</td>
+                            <td>{{service.port}}</td>
+                            <td>{{service.ipAddr}}</td>
+                            <td>{{service.status}}</td>
+                            <td>{{service.hostName}}</td>
                             <td>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-primary">Up</button>
-                                    <button type="button" class="btn btn-danger">Down</button>
-<!--                                    <button type="button" class="btn btn-primary">Details </button>-->
+                                    <button type="button" class="btn btn-primary" (click)="UpStatus2()">Up</button>
+                                    <button type="button" class="btn btn-danger" (click)="DownStatus2()">Down</button>
                                 </div>
                             </td>
                         </tr>
