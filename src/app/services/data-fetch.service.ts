@@ -6,13 +6,15 @@ import {catchError, retry} from 'rxjs/operators';
 import {Service2} from '../Class/service2';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class DataFetchService {
 
     apiURL = 'http://localhost:8761//MetadataProvider/Service1Info';
     apiURL2 = 'http://localhost:8761//MetadataProvider/Service2Info';
-  constructor( private  http: HttpClient) { }
+    apiURL3 = 'http://localhost:8761//MetadataProvider/back-end-Info';
+
+    constructor( private  http: HttpClient) { }
 
     httpOptions = {
         headers: new HttpHeaders({
@@ -26,7 +28,7 @@ export class DataFetchService {
                 retry(1),
                 catchError(this.handleError)
             )
-  }
+    }
 
     getService2(): Observable<Service2> {
         return this.http.get<Service2>(this.apiURL2)
@@ -34,6 +36,14 @@ export class DataFetchService {
                 retry(1),
                 catchError(this.handleError)
             )
+    }
+    getbackend(){
+        return this.http.get(this.apiURL3)
+            .pipe(
+                retry(1),
+                catchError(this.handleError)
+            )
+
     }
 
     handleError(error) {

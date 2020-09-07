@@ -20,15 +20,22 @@
                 </a>
                 <div class="dropdown-menu-right" ngbDropdownMenu>
 
+                    <a class="dropdown-item" [routerLink]="['/all-services']" >
+                        <i class="fa fa-cogs"></i>&nbsp; {{ 'all-Services'}}
+                    </a>
+
                     <a class="dropdown-item" [routerLink]="['/dashboard']" >
                         <i class="fa fa-server"> </i> {{ 'Eureka'}}
                     </a>
 
-                    <a class="dropdown-item" [routerLink]="['/all-services']" >
-                        <i class="fa fa-cogs"></i>&nbsp; {{ 'all-Services'}}
+                    <a class="dropdown-item" href="http://localhost:8762/service1/actuator/httptrace"  >
+                        <i class="fa fa-info-circle" style="max-font-size: 10px"></i> {{ 'Service1 trace'}}
                     </a>
-                    <a class="dropdown-item" href="http://localhost:8762/service2/actuator/health"  >
-                        <i class="fa fa-info-circle"></i> {{ 'Actuator'}}
+                    <a class="dropdown-item" href="http://localhost:8762/service2/actuator/httptrace"  >
+                        <i class="fa fa-info-circle"></i> {{ 'Service2 trace '}}
+                    </a>
+                    <a class="dropdown-item" href="http://localhost:8762/back-end-server/actuator/httptrace"  >
+                        <i class="fa fa-info-circle"></i> {{ 'back-end trace'}}
                     </a>
                     <a class="dropdown-item" href="http://127.0.0.1:3030/">
                         <i class="fa fa-database"></i>&nbsp;{{ 'Kafka '}}

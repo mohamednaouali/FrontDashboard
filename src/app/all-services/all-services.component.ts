@@ -13,47 +13,69 @@ import {Service1} from '../Class/service1';
     animations: [routerTransition()]
 })
 export class AllServicesComponent implements OnInit {
-    Service1 : any = [];
-    Service2 : any = [];
+    Service1: any = [];
+    Service2: any = [];
+    backend:  any = [];
 
-    constructor(private upDownServiceService :UpDownServiceService ,private dataFetchService  :DataFetchService) { }
-d
+    constructor(private upDownServiceService: UpDownServiceService , private dataFetchService: DataFetchService) {
+    }
+
+
     ngOnInit() {
-         this. loadService1();
-         this.loadService2()
+        this. loadService1();
+        this.loadService2();
+        this.loadbackend();
     }
 
-    UpStatus(){
+    UpStatus() {
         this.upDownServiceService.UpService()
-            .subscribe()
+            .subscribe();
     }
-    DownStatus(){
+    DownStatus() {
         this.upDownServiceService.DownService()
-            .subscribe()
+            .subscribe();
     }
 
-    UpStatus2(){
+    UpStatus2() {
         this.upDownServiceService.UpService2()
-            .subscribe()
+            .subscribe();
     }
-    DownStatus2(){
+    DownStatus2() {
         this.upDownServiceService.DownService2()
-            .subscribe()
+            .subscribe();
+    }
+    Downbackend() {
+        this.upDownServiceService.Downbackend()
+            .subscribe();
+    }
+    Upbackend() {
+        this.upDownServiceService.Upbackend()
+            .subscribe();
     }
 
-    loadService1(){
+
+    loadService1() {
 
         return this.dataFetchService.getService1().subscribe((data: {}) => {
-            this.Service1 =data ;
-            console.log(data)
-        })
+            this.Service1 = data ;
+            console.log(data);
+        });
     }
-    loadService2(){
+    loadService2() {
 
         return this.dataFetchService.getService2().subscribe((data: {}) => {
-            this.Service2 =data ;
-            console.log(data)
-        })
+            this.Service2 = data ;
+            console.log(data);
+        });
+    }
+    loadbackend() {
+        return this.dataFetchService.getbackend().subscribe((data: {}) => {
+            this.backend = data ;
+            console.log(data);
+        });
+
+
+
     }
 
 }
