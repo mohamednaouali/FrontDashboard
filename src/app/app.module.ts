@@ -19,7 +19,7 @@ import {DataFetchService} from './services/data-fetch.service';
         AppRoutingModule
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard, UpDownServiceService,DataFetchService],
+    providers: [AuthGuard, UpDownServiceService, DataFetchService],
 
     bootstrap: [AppComponent]
 })
