@@ -1,21 +1,19 @@
-<div class="login-page" [@routerTransition]>
-    <div class="row justify-content-md-center">
-        <div class="col-md-4">
-            <img src="assets/images/logo.png" width="150px" class="user-avatar" />
-            <h1> Microservice Monitoring Dashboard </h1>
-            <form role="form">
-                <div class="form-content">
-                    <div class="form-group">
-                        <input type="text" ngModel="name" class="form-control input-underline input-lg" name="username" [(ngModel)]="username" placeholder="{{ 'username' }}">
-                    </div>
+<div class="container position-center" id="body" >
+    <div class="container d-flex justify-content-center" [@routerTransition]>
+        <div class="d-flex flex-column justify-content-between">
+            <div class="card mt-3 p-5">
+                <div class="user-avatar"><img src="assets/images/login.png"   width="300px" ></div>
 
-                    <div class="form-group">
-                        <input type="password" class="form-control input-underline input-lg" name="password" [(ngModel)]="password" placeholder="{{ 'Password'  }}">
-                    </div>
+            </div>
+
+            <div class="card two bg-white px-5 py-4 mb-3">
+                <div class="form-group"><label ></label><input type="email" class="form-control"  name="username"  [(ngModel)]="username"    ><label class="form-control-placeholder" >Email</label></div>
+                <div class="form-group"><label ></label><input type="password" class="form-control" name="password"  [(ngModel)]="password" ><label class="form-control-placeholder" >Password</label>
                 </div>
-                <a class="btn rounded-btn" [routerLink]="['/all-services']" (click)="onLoggedin()">{{ 'Login'  }}</a>
-<!--                <a class="btn rounded-btn" [routerLink]="['/signup']">{{ 'Register' }}</a>-->
-            </form>
+                <button class="btn btn-primary btn-block btn-lg mt-1 mb-2"[routerLink]="['/all-services']" (click)="onLoggedin()"><span>Login<i class="fas fa-long-arrow-alt-right ml-2"></i></span></button>
+            </div>
         </div>
     </div>
 </div>
+
+

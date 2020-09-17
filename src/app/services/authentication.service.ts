@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class AuthenticationService {
 
-  constructor() { }
+    constructor() { }
     authenticate(username, password) {
-        if (username === 'mohamed' && password === 'admin') {
+        if (username === 'mohamednaouali@gmail.com' && password === 'tech2020') {
             sessionStorage.setItem('username', username);
             return true;
         } else {

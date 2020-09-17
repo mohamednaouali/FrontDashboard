@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { routerTransition } from '../router.animations';
 import { AuthenticationService } from '../services/authentication.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
     selector: 'app-login',
@@ -10,13 +11,16 @@ import { AuthenticationService } from '../services/authentication.service';
     animations: [routerTransition()]
 })
 export class LoginComponent implements OnInit {
-    username = 'mohamed';
-    password = 'admin';
+
+    username = '';
+    password = '';
     invalidLogin = false;
 
     constructor( public router: Router , private loginservice: AuthenticationService  ) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+
+    }
 
     onLoggedin() {
         if (this.loginservice.authenticate(this.username, this.password)

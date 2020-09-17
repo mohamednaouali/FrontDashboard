@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {routerTransition} from '../router.animations';
 import { UpDownServiceService } from '../services/up-down-service.service';
 import { DataFetchService } from '../services/data-fetch.service';
-import {Service1} from '../Class/service1';
-
 
 
 @Component({
